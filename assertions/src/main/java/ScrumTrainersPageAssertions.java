@@ -3,7 +3,7 @@ import scrum.ScrumTrainersPage;
 
 public class ScrumTrainersPageAssertions extends AbstractObjectAssert<ScrumTrainersPageAssertions, ScrumTrainersPage> {
 
-    protected ScrumTrainersPageAssertions(ScrumTrainersPage actual) {
+    ScrumTrainersPageAssertions(ScrumTrainersPage actual) {
         super(actual, ScrumTrainersPageAssertions.class);
     }
 

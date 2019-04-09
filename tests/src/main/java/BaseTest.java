@@ -7,7 +7,6 @@ import org.testng.annotations.Parameters;
 import webdriver.LocalDriverFactory;
 import webdriver.LocalDriverManager;
 
-import static config.ConfigurationTestAutomationInit.CONFIGURATION_PROPERTIES;
 import static webdriver.LocalDriverManager.getDriver;
 
 @Log

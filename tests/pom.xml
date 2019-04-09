@@ -48,8 +48,8 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/src/main/resources/sanity_tests/SanityTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>${project.basedir}/src/main/resources/sanity_tests/SmokeTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/main/resources/ChromeTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/main/resources/FirefoxTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
                 <dependencies>

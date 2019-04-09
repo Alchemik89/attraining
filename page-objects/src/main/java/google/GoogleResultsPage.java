@@ -4,6 +4,10 @@ import lombok.Getter;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static webdriver.LocalDriverManager.getDriver;
 
 public class GoogleResultsPage {
 
@@ -24,11 +28,12 @@ public class GoogleResultsPage {
     private WebElement firstSearchResultUrl;
 
     public GoogleResultsPage changeLanguageToEnglish() {
+        (new WebDriverWait(getDriver(), 30)).until(ExpectedConditions.visibilityOf(getChangeToEnglishLink()));
         getChangeToEnglishLink().click();
         return this;
     }
     public GoogleResultsPage searchInResults(String searchPhrase) {
-        getSearchInResultsInput().sendKeys("surface", Keys.ENTER);
+        getSearchInResultsInput().sendKeys(searchPhrase, Keys.ENTER);
         return this;
     }
 }

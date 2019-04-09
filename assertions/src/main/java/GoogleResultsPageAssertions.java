@@ -1,13 +1,18 @@
 import google.GoogleResultsPage;
 import org.assertj.core.api.AbstractObjectAssert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static webdriver.LocalDriverManager.getDriver;
 
 public class GoogleResultsPageAssertions extends AbstractObjectAssert<GoogleResultsPageAssertions, GoogleResultsPage> {
 
-    protected GoogleResultsPageAssertions(GoogleResultsPage actual) {
+    GoogleResultsPageAssertions(GoogleResultsPage actual) {
         super(actual, GoogleResultsPageAssertions.class);
     }
 
     public GoogleResultsPageAssertions hasValueInSearchInput(String value) {
+        (new WebDriverWait(getDriver(), 30)).until(ExpectedConditions.visibilityOf(actual.getSearchInput()));
         final String actualValue = actual.getSearchInput().getAttribute("value");
         TrainingAssertions.assertThat(actualValue)
                 .isEqualTo(value);
